@@ -2,6 +2,7 @@
 import streamlit as st
 # from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
+import requests
 
 # Write directly to the app
 st.title("My Parents New Helthy Diner")
@@ -44,3 +45,8 @@ time_to_insert = st.button("Submit Order")
 if time_to_insert:
     session.sql(my_insert_stmt).collect()
     st.success(f'Your Smoothie is ordered, {title}!', icon="✅")
+
+
+smoothiefroot_response = request.get("https://www.smoothiefroot.com/api/fruit/watermelon")
+
+st.write(smoothiefroot_response)
