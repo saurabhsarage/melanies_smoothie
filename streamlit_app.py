@@ -49,4 +49,4 @@ if time_to_insert:
 
 smoothiefroot_response = requests.get("https://www.smoothiefroot.com/api/fruit/watermelon")
 
-st.write(smoothiefroot_response.json())
+st.dataframe(smoothiefroot_response.json(), use_container_width=True)
