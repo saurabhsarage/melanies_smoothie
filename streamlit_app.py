@@ -47,6 +47,6 @@ if time_to_insert:
     st.success(f'Your Smoothie is ordered, {title}!', icon="✅")
 
 
-smoothiefroot_response = request.get("https://www.smoothiefroot.com/api/fruit/watermelon")
+smoothiefroot_response = requests.get("https://www.smoothiefroot.com/api/fruit/watermelon")
 
 st.write(smoothiefroot_response)
