@@ -26,13 +26,13 @@ ingreadient_list = st.multiselect(
     my_dataframe,
     max_selections=5
 )
-# if ingreadient_list:
-#     st.write(ingreadient_list)
-#     st.text(ingreadient_list)
 
 ingreadient_String = ''
 for fruits in ingreadient_list:
     ingreadient_String = ingreadient_String + fruits + ' ' 
+    smoothiefroot_response = requests.get("https://www.smoothiefroot.com/api/fruit/watermelon")
+
+    st.dataframe(smoothiefroot_response.json(), use_container_width=True)
 
 # st.write(ingreadient_String)
 
