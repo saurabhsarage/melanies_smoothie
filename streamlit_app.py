@@ -32,8 +32,10 @@ ingreadient_list = st.multiselect(
     max_selections=5
 )
 
+ingreadient_String = ''
+
 if ingreadient_list:
-    ingreadient_String = ''
+    
     for fruits in ingreadient_list:
         ingreadient_String = ingreadient_String + fruits + ' ' 
         
@@ -41,7 +43,7 @@ if ingreadient_list:
         st.write('The search value for ', fruits,' is ', search_on, '.')
         
         st.subheader(fruits + ' Nutrition  Information')
-        smoothiefroot_response = requests.get(f"https://www.smoothiefroot.com/api/fruit/{fruits}")
+        smoothiefroot_response = requests.get(f"https://www.smoothiefroot.com/api/fruit/{search_on}")
 
         st.dataframe(smoothiefroot_response.json(), use_container_width=True)
 
