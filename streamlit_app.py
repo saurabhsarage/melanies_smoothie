@@ -30,7 +30,8 @@ ingreadient_list = st.multiselect(
 ingreadient_String = ''
 for fruits in ingreadient_list:
     ingreadient_String = ingreadient_String + fruits + ' ' 
-    smoothiefroot_response = requests.get("https://www.smoothiefroot.com/api/fruit/watermelon")
+    st.subheader(fruits + 'Nutrition  Information')
+    smoothiefroot_response = requests.get(f"https://www.smoothiefroot.com/api/fruit/{fruits}")
 
     st.dataframe(smoothiefroot_response.json(), use_container_width=True)
 
